@@ -25,3 +25,11 @@
       -ms-transform: scale($horiz, $vert);
           transform: scale($horiz, $vert);
 }
+
+// CoolArts 17-07-015
+// coolarts@coolarts.ninja
+// Added function to create unicode characters on the fly preventing parsing errors
+// This function will be used on the icons creation at "_icons.scss"
+@function unicode($str){
+    @return unquote("\"")+unquote(str-insert($str, "\\", 1))+unquote("\"")
+}
